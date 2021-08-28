@@ -32,16 +32,41 @@ export default function App() {
 
     
     return (
-        <div className="App">
+        <div className="App" style={{backgroundColor: color}}>
             <div id="quote-box">
-                <h1 id="text" style={{color: color}}>{quote}</h1>
+                <p id="text" style={{color: color}}>
+                    <i 
+                        id="quote-icon" 
+                        class="fas fa-quote-left" 
+                        style={{color: color}}
+                    >
+                    </i> {quote}
+                </p>
                 <p id="author" style={{color: color}}>- {author}</p>
-                <div>
+                <div id="footer">
                     <div>
-                        <a href="#">Twitter</a>
-                        <a href="#">Tumblr</a>
+                        <a 
+                            id="tweet-quote" 
+                            href="#"
+                            style={{color: color}}
+                        >
+                            <i class="fab fa-twitter-square fa-2x"></i>
+                        </a>
+                        <a 
+                            id="tumblr-quote" 
+                            href="#"
+                            style={{color: color}}
+                        >
+                            <i class="fab fa-tumblr-square fa-2x"></i>
+                        </a>
                     </div>
-                    <button onClick={() => getRandomQuote()}>New quote</button>
+                    <button 
+                        id="new-quote" 
+                        onClick={() => getRandomQuote()}
+                        style={{backgroundColor: color}}
+                    >
+                        New quote
+                    </button>
                 </div>
             </div>
         </div>
