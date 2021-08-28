@@ -1,5 +1,5 @@
 # Random Quote Machine
-<hr />
+---
 
 A React web app that randomly generates quotes.
 
