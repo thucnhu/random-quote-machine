@@ -36,10 +36,21 @@
     text-decoration: none;
 }
 
+#tweet-quote:hover {
+    opacity: 80%;
+    transition: 300ms ease-out;
+}
+
 #new-quote {
     height: auto;
     border: none;
     padding: 0 1rem 0 1rem;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+#new-quote:hover {
+    opacity: 80%;
+    transition: 300ms ease-out;
 }
