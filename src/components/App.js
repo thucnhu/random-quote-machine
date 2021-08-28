@@ -44,22 +44,13 @@ export default function App() {
                 </p>
                 <p id="author" style={{color: color}}>- {author}</p>
                 <div id="footer">
-                    <div>
-                        <a 
-                            id="tweet-quote" 
-                            href="#"
-                            style={{color: color}}
-                        >
-                            <i class="fab fa-twitter-square fa-2x"></i>
-                        </a>
-                        <a 
-                            id="tumblr-quote" 
-                            href="#"
-                            style={{color: color}}
-                        >
-                            <i class="fab fa-tumblr-square fa-2x"></i>
-                        </a>
-                    </div>
+                    <a 
+                        id="tweet-quote" 
+                        href={encodeURI(`http://www.twitter.com/intent/tweet?text=${quote} - ${author}`)}
+                        style={{color: color}}
+                    >
+                        <i class="fab fa-twitter-square fa-2x"></i>
+                    </a>
                     <button 
                         id="new-quote" 
                         onClick={() => getRandomQuote()}
