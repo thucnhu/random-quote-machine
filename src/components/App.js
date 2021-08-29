@@ -5,8 +5,10 @@ import {  } from "./"
 
 
 export default function App() {
-    const [quote, setQuote] = useState("Eighty percent of success is showing up.")
-    const [author, setAuthor] = useState("Woody Allen")
+    const [data, setData] = useState({
+        quote: "Eighty percent of success is showing up.", 
+        author: "Woody Allen"
+    })
     const [quotesArray, setQuotesArray] = useState([])
     const [color, setColor] = useState("") 
 
@@ -20,15 +22,17 @@ export default function App() {
 
     function getRandomQuote() {
         let randNum = Math.floor(quotesArray.length * Math.random())
-        setQuote(quotesArray[randNum].quote)
-        setAuthor(quotesArray[randNum].author)
+        setData({
+            quote: quotesArray[randNum].quote, 
+            author: quotesArray[randNum].author
+        })
     }
 
 
     useEffect(() => {
         getQuotesArray()
         setColor(randomcolor())
-    }, [quote, author])
+    }, [data])
 
     
     return (
@@ -40,20 +44,20 @@ export default function App() {
                         class="fas fa-quote-left" 
                         style={{color: color}}
                     >
-                    </i> {quote}
+                    </i> {data.quote}
                 </p>
-                <p id="author" style={{color: color}}>- {author}</p>
+                <p id="author" style={{color: color}}>- {data.author}</p>
                 <div id="footer">
                     <a 
                         id="tweet-quote" 
-                        href={encodeURI(`http://www.twitter.com/intent/tweet?text=${quote} - ${author}`)}
+                        href={encodeURI(`http://www.twitter.com/intent/tweet?text=${data.quote} - ${data.author}`)}
                         style={{color: color}}
                     >
                         <i class="fab fa-twitter-square fa-2x"></i>
                     </a>
                     <button 
                         id="new-quote" 
-                        onClick={() => getRandomQuote()}
+                        onClick={getRandomQuote}
                         style={{backgroundColor: color}}
                     >
                         New quote
